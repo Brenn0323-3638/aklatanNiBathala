@@ -1,0 +1,131 @@
+/* assets/css/main.css - User Facing Styles - CONSOLIDATED & CORRECTED */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tagalog&display=swap');
+
+body {
+  background: linear-gradient(to bottom right, #f3efea, #e2d4bb);
+  font-family: 'Merriweather', serif;
+  color: #333;
+  margin: 0; padding: 0;
+}
+
+/* --- Base Layout & General Elements --- */
+#dashboardWrapper { /* Assuming this is used in user-side too? If not, remove */
+    display: flex; min-height: 100vh; width: 100%;
+}
+.site-content { /* Wrapper inside header/footer */
+    flex-grow: 1;
+}
+.content-section { /* Style for main content blocks/cards */
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.content-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+.content-section h1, .content-section h2, .content-section h3, .content-section h4, .content-section h5 {
+    font-family: 'Playfair Display', serif;
+    color: #2e3a59;
+}
+
+/* --- Navigation Bar --- */
+.site-header { /* ... (Keep styles from previous version) ... */
+    background-color: #2e3a59; padding-top: 0.75rem; padding-bottom: 0.75rem;
+}
+.navbar-brand-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; color: #fcefb4 !important; }
+.navbar-brand-baybayin { font-family: 'Noto Sans Tagalog', sans-serif; font-size: 1.1rem; color: rgba(252, 239, 180, 0.8) !important; }
+.navbar .nav-link { color: rgba(255, 255, 255, 0.75); font-weight: 500; transition: color 0.2s ease; padding-left: 0.75rem; padding-right: 0.75rem; }
+.navbar .nav-link:hover, .navbar .nav-link:focus { color: #ffffff; }
+.navbar .nav-link.active { color: #fcefb4; font-weight: 700; }
+.navbar-toggler { border-color: rgba(255, 255, 255, 0.2); }
+.dropdown-menu { border-radius: 0.5rem; border: none; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+.navbar .btn-sm { padding: 0.3rem 0.8rem; font-size: 0.9rem; }
+
+/* --- Footer --- */
+.site-footer { background-color: #2e3a59; font-size: 0.9rem; }
+.footer-text { color: rgba(252, 239, 180, 0.8); }
+
+/* --- General Typography & Buttons --- */
+a { color: #1a2a4a; text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: #2e3a59; text-decoration: underline; }
+.btn-primary { background-color: #2e3a59; border-color: #2e3a59; color: #ffffff; transition: background-color 0.2s ease, border-color 0.2s ease; padding: 0.6rem 1.2rem; font-weight: 500; border-radius: 50rem; }
+.btn-primary:hover { background-color: #1f293e; border-color: #1f293e; }
+.btn-secondary { background-color: #6c757d; border-color: #6c757d; color: white; transition: background-color 0.2s ease, border-color 0.2s ease; padding: 0.6rem 1.2rem; font-weight: 500; border-radius: 50rem; }
+.btn-secondary:hover { background-color: #5a6268; border-color: #545b62; }
+
+
+/* --- Homepage Specific Styles --- */
+.hero-section {
+    background: rgba(255, 255, 255, 0.7); border-radius: 15px;
+    backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0,0,0,0.05); padding: 3rem 1.5rem; /* Adjust padding as needed */
+    margin-bottom: 2rem; /* Consistent margin */
+}
+.hero-title { font-family: 'Playfair Display', serif; color: #2e3a59; font-weight: 700; }
+.hero-subtitle { font-family: 'Merriweather', serif; color: #4a5a7e; }
+.hero-divider { max-width: 100px; border-width: 3px; opacity: 0.5; border-color: #2e3a59; margin: 1.5rem auto;}
+
+.featured-box {
+    border-radius: 15px; /* <<< ENSURE THIS IS PRESENT */
+    display: flex; flex-direction: column; height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem; /* Add padding directly */
+    margin-bottom: 2rem; /* Consistent spacing */
+}
+.featured-box:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
+.featured-box h2 { font-family: 'Playfair Display', serif; margin-bottom: 0.75rem; color: #2e3a59;} /* Default heading color */
+.featured-box p { flex-grow: 1; margin-bottom: 1.5rem; color: inherit; opacity: 0.9; }
+.featured-box i.fas { opacity: 0.7; font-size: 2.5rem; margin-bottom: 1rem; color: #2e3a59;} /* Default icon color */
+
+.featured-box-dark { background-color: #2e3a59; color: #f0f0f0; }
+.featured-box-dark h2 { color: #fcefb4; }
+.featured-box-dark i.fas { color: #fcefb4; opacity: 0.6; }
+.featured-box-light { background-color: #ffffff; color: #333; border: 1px solid #eee; }
+/* No need to redefine h2/icon color for light, inherits default */
+
+
+/* --- About Page Specific Styles --- */
+.about-section-user i.fas { font-size: 2.5rem; opacity: 0.6; color: #2e3a59; margin-bottom: 1rem; transition: transform 0.3s ease, opacity 0.3s ease; }
+.about-section-user:hover i.fas { transform: scale(1.1); opacity: 0.8; }
+.feature-list li { padding-bottom: 0.5rem; display: flex; align-items: flex-start; }
+.feature-list i.fa-check { margin-right: 0.75rem; margin-top: 0.25rem; color: #198754; font-size: 0.9em; transition: transform 0.2s ease; }
+.feature-list li:hover i.fa-check { transform: scale(1.2); }
+
+
+/* --- Quiz Page Specific Styles --- */
+.quiz-description { max-height: 90px; overflow-y: auto; font-size: 0.95rem; }
+.attempt-info { min-height: 60px; display: flex; flex-direction: column; justify-content: center; }
+
+
+/* === Scroll Animation Styles (Using Intersection Observer) === */
+.scroll-fade-in {
+    opacity: 0; /* Start hidden */
+    transform: translateY(30px); /* Start slightly lower */
+    /* Transition applied when 'visible' class is added by JS */
+    transition: opacity 0.7s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* Add delays using classes set in HTML */
+    /* transition-delay: var(--animation-delay, 0s); /* Use CSS variable if setting delay dynamically */
+}
+.scroll-fade-in.visible { /* Class added by JS when element is in view */
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Example Staggered Delays (Add these classes to elements in HTML) */
+.animation-delay-1 { transition-delay: 0.1s !important; } /* Use !important if needed to override base */
+.animation-delay-2 { transition-delay: 0.2s !important; }
+.animation-delay-3 { transition-delay: 0.3s !important; }
+.animation-delay-4 { transition-delay: 0.4s !important; }
+
+/* === REMOVE Keyframe Animation Rules === */
+/* @keyframes fadeInUp { ... } */
+/* .fade-in-section { animation: ... } */
+/* .animation-delay-1 { animation-delay: ... } etc. */

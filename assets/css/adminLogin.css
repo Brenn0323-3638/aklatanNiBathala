@@ -1,0 +1,129 @@
+/* === adminLogin.css === */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tagalog&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom right, #f3efea, #e2d4bb);
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Card Container */
+.login-wrapper {
+  max-width: 480px;
+  width: 100%;
+  background: white;
+  border-radius: 20px; /* Increased rounding */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+  overflow: hidden;
+  animation: floatIn 0.6s ease-out; /* Subtle float-in animation */
+}
+
+@keyframes floatIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+
+/* Header */
+.login-header {
+  background-color: #2e3a59;
+  color: #fcefb4;
+  padding: 2rem; /* Increased padding */
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  border-bottom: 5px solid #fcefb4; /* Added accent border */
+}
+
+.login-header h3 {
+  margin: 0;
+  font-size: 2rem; /* Slightly larger */
+  margin-bottom: 0.25rem; /* Space below h3 */
+}
+
+.baybayin {
+  font-family: 'Noto Sans Tagalog', sans-serif;
+  font-size: 1.3rem;
+  margin-top: 0.25rem;
+  color: #fcefb4;
+  opacity: 0.9; /* Slightly less prominent */
+}
+
+/* Body */
+.login-body {
+  padding: 2.5rem; /* Increased padding */
+}
+
+.form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem; /* Increased spacing */
+  display: block;
+  color: #495057; /* Slightly darker label */
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem; /* Adjusted padding */
+  margin-bottom: 1.5rem; /* Increased spacing */
+  border: 1px solid #ced4da; /* Softer border */
+  border-radius: 8px; /* Less rounded */
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-control:focus {
+    border-color: #a8b5e0; /* Highlight focus */
+    box-shadow: 0 0 0 0.25rem rgba(46, 58, 89, 0.25); /* Focus shadow using theme color */
+}
+
+
+.btn-primary {
+  background-color: #2e3a59;
+  border: none;
+  width: 100%;
+  padding: 0.8rem; /* Adjusted padding */
+  font-size: 1.1rem; /* Slightly larger text */
+  font-weight: 600;
+  border-radius: 8px; /* Match inputs */
+  transition: background-color 0.3s ease, transform 0.1s ease; /* Added transform */
+}
+
+.btn-primary:hover {
+  background-color: #1f293e;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+.btn-primary:active {
+    transform: translateY(0); /* Press down effect */
+}
+
+
+.alert {
+  margin-bottom: 1.5rem; /* More space below alert */
+  border-radius: 8px;
+}
+
+/* Styles for the added text */
+.login-body hr {
+    border-top-color: rgba(0, 0, 0, 0.1); /* Lighter separator */
+}
+
+.login-body .small {
+    line-height: 1.6; /* Better readability for small text */
+}
+.login-body .small a {
+    color: #2e3a59; /* Theme color for link */
+    text-decoration: none;
+}
+.login-body .small a:hover {
+    text-decoration: underline;
+}
